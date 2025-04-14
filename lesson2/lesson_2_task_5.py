@@ -1,11 +1,11 @@
-def season(moth):
+def month_to_season(month):
     if month == 12 or month < 3:
         return "Зима"
     elif month == 3 or month < 6:
         return "Весна"
     elif month == 6 or month < 9:
         return "Лето"
-    elif month == 9 or month < 11:
+    elif month == 9 or month < 12:
         return "Осень"
     else:
         return "нет такого месяца"
@@ -34,5 +34,5 @@ while True:
 
 month = int(month)
 
-answer = season(month)
+answer = month_to_season(month)
 print(answer)
