@@ -85,4 +85,3 @@ def test_delete_symbol_negative_cases():
 
 if __name__ == "__main__":
     pytest.main()
-
