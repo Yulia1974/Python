@@ -50,3 +50,4 @@ def test_purchase(driver):
     total_cost_value = float(total_cost.split("$")[1])
 
     assert total_cost_value == 58.29, f"Итоговая сумма должна быть 58.29, но получена {total_cost_value}"
+
