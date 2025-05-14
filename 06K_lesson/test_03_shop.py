@@ -10,7 +10,6 @@ def driver():
     driver.quit()
 
 def test_purchase(driver):
-    # Открываем сайт магазина
     driver.get("https://www.saucedemo.com/")
 
     username_field = driver.find_element(By.ID, "user-name")
@@ -21,9 +20,20 @@ def test_purchase(driver):
     password_field.send_keys("secret_sauce")
     login_button.click()
 
-    backpack_add_button = driver.find_element(By.XPATH, "//div[@class='inventory_item' and .//div[contains(text(), 'Sauce Labs Backpack')]]//button")
-    tshirt_add_button = driver.find_element(By.XPATH, "//div[@class='inventory_item' and .//div[contains(text(), 'Sauce Labs Bolt T-Shirt')]]//button")
-    onesie_add_button = driver.find_element(By.XPATH, "//div[@class='inventory_item' and .//div[contains(text(), 'Sauce Labs Onesie')]]//button")
+    backpack_add_button = driver.find_element(
+        By.XPATH, "//div[@class='inventory_item' and .//div[contains(text(),"
+                  "'Sauce Labs Backpack')]]//button"
+    )
+
+    tshirt_add_button = driver.find_element(
+        By.XPATH, "//div[@class='inventory_item' and .//div[contains(text(),"
+                  "'Sauce Labs Bolt T-Shirt')]]//button"
+    )
+
+    onesie_add_button = driver.find_element(
+        By.XPATH, "//div[@class='inventory_item' and .//div[contains(text(),"
+                  "'Sauce Labs Onesie')]]//button"
+    )
 
     backpack_add_button.click()
     tshirt_add_button.click()
@@ -50,4 +60,3 @@ def test_purchase(driver):
     total_cost_value = float(total_cost.split("$")[1])
 
     assert total_cost_value == 58.29, f"Итоговая сумма должна быть 58.29, но получена {total_cost_value}"
-

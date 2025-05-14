@@ -20,7 +20,7 @@ def test_fill_form(driver):
     driver.find_element(By.NAME, "country").send_keys("Россия")
     driver.find_element(By.NAME, "e-mail").send_keys("test@skypro.com")
     driver.find_element(By.NAME, "phone").send_keys("+7985899998787")
-    driver.find_element(By.NAME, "job-position").send_keys("QA")  
+    driver.find_element(By.NAME, "job-position").send_keys("QA")
     driver.find_element(By.NAME, "company").send_keys("SkyPro")
 
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
@@ -32,4 +32,3 @@ def test_fill_form(driver):
     for pole in poles:
         pole_class = driver.find_element(By.CSS_SELECTOR, pole).get_attribute("class")
         assert pole_class == "alert py-2 alert-success"
-
