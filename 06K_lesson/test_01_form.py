@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
@@ -9,9 +10,12 @@ def driver():
     yield driver
     driver.quit()
 
+
 @pytest.mark.usefixtures("driver")
 def test_fill_form(driver):
-    driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
+    driver.get(
+        "https://bonigarcia.dev/selenium-webdriver-java/data-types.html"
+    )
 
     driver.find_element(By.NAME, "first-name").send_keys("Иван")
     driver.find_element(By.NAME, "last-name").send_keys("Петров")
@@ -28,7 +32,10 @@ def test_fill_form(driver):
     pole_z = driver.find_element(By.ID, "zip-code").get_attribute("class")
     assert pole_z == "alert py-2 alert-danger"
 
-    poles = ["#first-name", "#last-name", "#address", "#city", "#country", "#e-mail", "#phone", "#company"]
+    poles = ["#first-name", "#last-name", "#address", "#city", "#country",
+             "#e-mail", "#phone", "#company"]
+
     for pole in poles:
-        pole_class = driver.find_element(By.CSS_SELECTOR, pole).get_attribute("class")
+        pole_class = driver.find_element(
+            By.CSS_SELECTOR, pole).get_attribute("class")
         assert pole_class == "alert py-2 alert-success"

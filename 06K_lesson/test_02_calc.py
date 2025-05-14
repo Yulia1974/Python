@@ -11,9 +11,12 @@ def driver():
     yield driver
     driver.quit()
 
+
 def test_slow_calculator(driver):
     wait = WebDriverWait(driver, 60)
-    driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
+    driver.get(
+        "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html"
+    )
 
     wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#delay')))
 
@@ -29,6 +32,7 @@ def test_slow_calculator(driver):
     WebDriverWait(driver, 45).until(
         EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.screen'), '15')
     )
+
 
     res = driver.find_element(By.CSS_SELECTOR, '.screen').text
     assert res == "15"
