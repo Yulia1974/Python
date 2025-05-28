@@ -3,7 +3,7 @@ import requests
 
 base_url = "https://ru.yougile.com/api-v2/projects/"
 
-api_key = "iZ9lYsQiCQYV2rgesRquxBoEP-+HAuRPgDW3WMfEy6u+QhB7XTmHWkZc85BJSWLR"
+api_key = "key"
 
 headers = {
     "Authorization": f"Bearer {api_key}",
