@@ -101,3 +101,4 @@ def test_delete_student(session):
     student = result.mappings().fetchone()
 
     assert student is None
+
