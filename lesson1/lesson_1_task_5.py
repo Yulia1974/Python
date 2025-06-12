@@ -1,15 +1,15 @@
-def print_letter(num):
+def print_num(num):
     print(num, end='')
 
 
-print_letter('8 ')
-print_letter('8 ')
-print_letter('0 ')
-print_letter('0 ')
-print_letter('5 ')
-print_letter('5 ')
-print_letter('5 ')
-print_letter('3 ')
-print_letter('5 ')
-print_letter('3 ')
-print_letter('5 ')
+print_num('8 ')
+print_num('8 ')
+print_num('0 ')
+print_num('0 ')
+print_num('5 ')
+print_num('5 ')
+print_num('5 ')
+print_num('3 ')
+print_num('5 ')
+print_num('3 ')
+print_num('5 ')
