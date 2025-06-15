@@ -31,7 +31,8 @@ def test_add_student(session):
 
     select_stmt = text("SELECT user_id, level, education_form, "
                        "subject_id FROM student WHERE user_id=:user_id")
-    student = session.execute(select_stmt, {'user_id': user_id}).fetchone()
+    result = session.execute(select_stmt, {'user_id': user_id})
+    student = result.mappings().fetchone()
 
     assert student is not None
     assert student['user_id'] == 12345
@@ -69,7 +70,8 @@ def test_update_student(session):
     })
 
     select_stmt = text("SELECT level, education_form FROM student WHERE user_id=:user_id")
-    student = session.execute(select_stmt, {'user_id': user_id}).fetchone()
+    result = session.execute(select_stmt, {'user_id': user_id})
+    student = result.mappings().fetchone()
 
     assert student['level'] == 'PhD'
     assert student['education_form'] == 'Online'
